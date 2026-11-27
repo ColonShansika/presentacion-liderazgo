@@ -1,10 +1,9 @@
 
-/* ==================================
-   BREATH WELLNESS
-   MODERN WELLNESS DESIGN
-================================== */
+/* ==============================
+   VARIABLES Y ESTILO GENERAL
+============================== */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
     --cream: #F7F5EF;
@@ -31,784 +30,659 @@ html {
 }
 
 body {
+    font-family: 'DM Sans', sans-serif;
     background: var(--cream);
-    font-family: 'DM Sans', Arial, sans-serif;
     color: var(--text);
-    padding: 20px;
+    line-height: 1.7;
 }
 
-.website {
-    max-width: 1350px;
-    margin: auto;
-    background: var(--white);
-    border-radius: 24px;
-    overflow: hidden;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* ==================================
-   NAVIGATION
-================================== */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ==============================
+   NAVBAR
+============================== */
 
 .navbar {
-    padding: 25px 55px;
-    background: var(--white);
+    width: 100%;
+    padding: 22px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
-    border-bottom: 1px solid var(--border);
+    background: var(--cream);
+    gap: 30px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    font-family: 'Playfair Display', serif;
     font-size: 25px;
+    font-weight: 700;
     color: var(--green);
-    text-decoration: none;
-    font-weight: 600;
     white-space: nowrap;
 }
 
-.logo-icon {
-    font-size: 30px;
+.logo span {
     color: var(--sage-dark);
 }
 
 .navbar nav {
     display: flex;
+    gap: 25px;
     align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
 }
 
 .navbar nav a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-size: 14px;
-    padding: 11px 17px;
-    border-radius: 50px;
-    transition: 0.25s ease;
+    font-size: 13px;
+    color: var(--text);
+    transition: 0.3s;
 }
 
-.navbar nav a:hover,
-.navbar nav a.active {
-    background: var(--sage);
+.navbar nav a:hover {
+    color: var(--green-light);
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn:hover {
+    background: var(--green-light);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: var(--white);
     color: var(--green);
 }
 
+.btn-light:hover {
+    background: var(--sage);
+}
 
-/* ==================================
-   HERO
-================================== */
+/* ==============================
+   HERO PRINCIPAL
+============================== */
 
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 60px;
-    padding: 85px 75px;
-    background: var(--cream);
+    gap: 70px;
+    padding: 70px 8%;
+    min-height: 550px;
 }
 
 .hero-content {
     max-width: 600px;
 }
 
-.eyebrow {
-    color: var(--green-light);
-    font-size: 12px;
+.tag {
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 2.5px;
-    display: inline-block;
+    letter-spacing: 2px;
+    color: var(--green-light);
     margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(45px, 5vw, 70px);
-    font-weight: 500;
-    line-height: 1.12;
+    font-size: clamp(42px, 5vw, 70px);
     color: var(--green);
     margin-bottom: 25px;
 }
 
-.hero h1 span {
+.hero h1 span,
+.page-hero h1 span {
     color: var(--sage-dark);
-    display: block;
 }
 
-.hero-content > p {
-    font-size: 17px;
-    line-height: 1.8;
+.hero-content > p:not(.tag) {
+    font-size: 16px;
     color: var(--text-light);
     max-width: 500px;
     margin-bottom: 30px;
 }
 
-
-/* BUTTON */
-
-.primary-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    padding: 16px 25px;
-    background: var(--green);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-.primary-button:hover {
-    background: var(--green-light);
-    transform: translateY(-3px);
-}
-
-.primary-button span {
-    font-size: 20px;
-}
-
-
-/* HERO NOTE */
-
-.hero-note {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 35px;
-}
-
-.hero-note span {
-    font-size: 25px;
-}
-
-.hero-note p {
-    font-size: 13px;
-    color: var(--text-light);
-}
-
-
-/* HERO VISUAL */
-
-.hero-visual {
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image-card {
+.hero-image {
     position: relative;
+}
+
+.image-placeholder {
     width: 100%;
-    max-width: 470px;
-}
-
-.hero-image-placeholder {
-    min-height: 480px;
-    background: var(--sage);
-    border-radius: 240px 240px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 450px;
+    border-radius: 30px;
     overflow: hidden;
-    position: relative;
 }
 
-.plant-art {
-    font-size: 180px;
-    opacity: 0.9;
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-
-.image-message {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: var(--green);
-    line-height: 1.5;
-    margin-top: 15px;
-}
-
-
-/* FLOATING CARD */
 
 .floating-card {
     position: absolute;
     bottom: 25px;
-    left: -30px;
-    background: white;
-    padding: 18px 22px;
-    border-radius: 18px;
-    box-shadow: 0 10px 35px rgba(53, 86, 64, 0.10);
+    left: -35px;
+    background: var(--white);
+    padding: 20px 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(53, 86, 64, 0.12);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
+    max-width: 250px;
 }
 
-.floating-icon {
-    width: 45px;
-    height: 45px;
-    background: var(--pink);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    color: #B87F7F;
+.floating-card span {
+    font-size: 28px;
 }
 
-.floating-card strong {
-    display: block;
-    font-size: 14px;
+.floating-card p {
+    font-size: 13px;
+    font-weight: 600;
     color: var(--green);
 }
 
-.floating-card small {
-    display: block;
-    font-size: 12px;
-    color: var(--text-light);
-    margin-top: 5px;
+/* ==============================
+   INTRODUCCIÓN
+============================== */
+
+.intro {
+    padding: 100px 10%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
 }
 
-
-/* ==================================
-   INTRO SECTION
-================================== */
-
-.intro-section {
-    padding: 85px 75px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 70px;
-}
-
-.section-heading h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    line-height: 1.25;
-    font-weight: 500;
+.intro h2 {
+    font-size: clamp(35px, 4vw, 50px);
     color: var(--green);
+    margin-bottom: 25px;
 }
 
-.intro-text {
-    font-size: 17px;
-    line-height: 1.9;
+.intro > p:not(.tag) {
+    max-width: 750px;
+    margin: auto;
     color: var(--text-light);
+    font-size: 16px;
 }
 
-
-/* ==================================
-   WELLNESS SECTION
-================================== */
+/* ==============================
+   SECCIONES DE BIENESTAR
+============================== */
 
 .wellness-section {
-    padding: 80px 75px;
-    background: #FAFBF8;
+    padding: 80px 8%;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 45px;
+    max-width: 700px;
+    margin: 0 auto 50px;
 }
 
 .section-heading h2 {
-    margin-bottom: 15px;
+    font-size: clamp(35px, 4vw, 50px);
+    color: var(--green);
+    margin-bottom: 20px;
 }
 
-.section-heading p {
+.section-heading > p:not(.tag) {
     color: var(--text-light);
-    line-height: 1.8;
-    max-width: 700px;
-    margin: auto;
 }
 
+/* ==============================
+   TARJETAS
+============================== */
 
-/* CARDS GRID */
-
-.wellness-grid {
+.cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-.wellness-card {
-    text-decoration: none;
-    color: inherit;
+.card {
+    display: block;
+    padding: 35px;
     border-radius: 25px;
-    padding: 30px;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
     transition: 0.3s;
+    border: 1px solid transparent;
 }
 
-.wellness-card:hover {
-    transform: translateY(-8px);
+.card:hover {
+    transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(53, 86, 64, 0.08);
 }
 
-.card-green {
-    background: #E7EFE3;
+.physical-card {
+    background: var(--sage);
 }
 
-.card-pink {
-    background: #F5E8E4;
+.emotional-card {
+    background: var(--pink);
 }
 
-.card-yellow {
-    background: #F4EEDC;
+.social-card {
+    background: var(--yellow);
 }
 
-.card-top {
+.card-icon {
+    width: 65px;
+    height: 65px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
-.card-number {
-    font-size: 13px;
-    color: var(--text-light);
-}
-
-.card-emoji {
-    font-size: 40px;
-}
-
-.wellness-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    font-weight: 500;
+.card h3 {
+    font-size: 25px;
     color: var(--green);
     margin-bottom: 15px;
 }
 
-.wellness-card p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: var(--text-light);
-    margin-bottom: 25px;
-}
-
-.card-arrow {
-    margin-top: auto;
+.card p {
     font-size: 14px;
-    font-weight: 600;
-    color: var(--green);
+    color: var(--text-light);
+    margin-bottom: 20px;
 }
 
+.card-link {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--green);
+    font-size: 14px;
+}
 
-/* ==================================
-   CAMPAIGN BANNER
-================================== */
+/* ==============================
+   BANNER
+============================== */
 
 .campaign-banner {
-    margin: 60px 75px;
-    padding: 40px;
-    background: var(--sage);
-    border-radius: 25px;
+    margin: 60px 8%;
+    padding: 60px;
+    background: var(--green);
+    border-radius: 30px;
+    color: var(--white);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 40px;
 }
 
-.banner-icon {
-    font-size: 55px;
+.campaign-banner .tag {
+    color: var(--sage);
 }
 
 .campaign-banner h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--green);
-    line-height: 1.4;
-    max-width: 650px;
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 20px;
 }
 
-.secondary-button {
-    text-decoration: none;
-    background: white;
-    color: var(--green);
-    padding: 15px 22px;
-    border-radius: 50px;
-    white-space: nowrap;
-    margin-left: auto;
-    transition: 0.3s;
+.campaign-banner p:not(.tag) {
+    max-width: 550px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.secondary-button:hover {
-    background: var(--green);
-    color: white;
-}
-
-
-/* ==================================
-   PAGE HERO
-================================== */
+/* ==============================
+   HERO DE PÁGINAS INTERNAS
+============================== */
 
 .page-hero {
-    background: var(--cream);
-    padding: 85px 75px;
+    padding: 100px 10%;
     text-align: center;
+    background: var(--sage);
 }
 
-.page-hero h1,
-.page-hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 55px;
-    font-weight: 500;
+.page-hero h1 {
+    font-size: clamp(42px, 5vw, 65px);
     color: var(--green);
     margin-bottom: 25px;
 }
 
-.page-hero p {
-    max-width: 800px;
+.page-hero > p:not(.tag) {
+    max-width: 700px;
     margin: auto;
-    font-size: 18px;
-    line-height: 1.8;
     color: var(--text-light);
+    font-size: 16px;
 }
 
+/* ==============================
+   ESTRATEGIAS
+============================== */
 
-/* ==================================
-   CONTENT BOXES
-================================== */
-
-.strategy-container {
-    padding: 60px 75px;
+.strategy-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
 .strategy-box {
+    background: var(--white);
     padding: 35px;
-    background: #E7EFE3;
     border-radius: 25px;
     border: 1px solid var(--border);
+    transition: 0.3s;
 }
 
-.strategy-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 27px;
-    font-weight: 500;
-    color: var(--green);
+.strategy-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(53, 86, 64, 0.07);
+}
+
+.strategy-icon {
+    font-size: 35px;
+    display: block;
     margin-bottom: 20px;
 }
 
-.strategy-box p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--text-light);
-}
-
-.strategy-box ul {
-    padding-left: 20px;
-}
-
-.strategy-box li {
+.strategy-box h3 {
+    color: var(--green);
+    font-size: 24px;
     margin-bottom: 15px;
-    font-size: 16px;
-    line-height: 1.8;
+}
+
+.strategy-box p {
     color: var(--text-light);
+    font-size: 14px;
 }
 
-.emotional-box {
-    background: #F5E8E4;
-}
+/* ==============================
+   QUOTES
+============================== */
 
-.social-box {
-    background: #F4EEDC;
-}
-
-
-/* ==================================
-   QUOTE
-================================== */
-
-.quote {
-    background: var(--green);
-    padding: 65px 50px;
+.quote-section {
+    padding: 80px 10%;
+    background: var(--pink);
     text-align: center;
 }
 
-.quote h2 {
+.quote-section blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 500;
-    color: white;
+    font-size: clamp(25px, 3vw, 40px);
+    color: var(--green);
     max-width: 850px;
     margin: auto;
-    line-height: 1.5;
+    font-style: italic;
 }
 
+/* ==============================
+   MENSAJE FINAL
+============================== */
 
-/* ==================================
-   MESSAGE
-================================== */
+.message-section {
+    padding: 80px 8%;
+}
 
 .message-card {
-    padding: 80px 100px;
-    text-align: center;
-    background: var(--cream);
-}
-
-.message-icon {
-    font-size: 70px;
-    margin-bottom: 30px;
-}
-
-.message-card p {
-    font-size: 18px;
-    line-height: 1.9;
-    color: var(--text-light);
-    max-width: 850px;
-    margin: 20px auto;
+    background: var(--sage);
+    padding: 60px;
+    border-radius: 30px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .message-card h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    font-weight: 500;
-    line-height: 1.5;
     color: var(--green);
-    max-width: 850px;
-    margin: 40px auto 0;
+    font-size: clamp(35px, 4vw, 50px);
+    margin-bottom: 30px;
 }
 
+.message-card p:not(.tag) {
+    color: var(--text);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
 
-/* ==================================
-   FOOTER
-================================== */
+/* ==============================
+   IMPACTO ÉTICO
+============================== */
 
-.footer {
+.ethics-section {
+    padding: 100px 10%;
+    background: var(--pink);
+}
+
+.ethics-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.ethics-content h2 {
+    font-size: clamp(35px, 4vw, 50px);
+    color: var(--green);
+    margin-bottom: 30px;
+}
+
+.ethics-content p {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+/* ==============================
+   BANNER FINAL
+============================== */
+
+.final-banner {
+    padding: 100px 8%;
+    text-align: center;
     background: var(--green);
-    color: white;
-    padding: 45px 60px 25px;
+    color: var(--white);
 }
 
-.footer-brand h2 {
-    font-family: 'Playfair Display', serif;
+.final-banner .tag {
+    color: var(--sage);
+}
+
+.final-banner h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    margin-bottom: 25px;
+}
+
+.final-banner > p:not(.tag) {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: var(--cream);
+    text-align: center;
+    padding: 60px 8% 30px;
+}
+
+footer h3 {
+    color: var(--green);
     font-size: 28px;
-    font-weight: 500;
+    margin-bottom: 10px;
 }
 
-.footer-brand p {
-    margin-top: 10px;
-    color: #D5E1D2;
+footer > p {
+    color: var(--text-light);
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .footer-links {
     display: flex;
-    gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
-    margin: 35px 0;
+    gap: 25px;
+    margin: 30px 0;
 }
 
 .footer-links a {
-    text-decoration: none;
-    color: #E5ECE2;
-    font-size: 14px;
+    font-size: 13px;
+    color: var(--green);
+    transition: 0.3s;
 }
 
 .footer-links a:hover {
-    color: white;
-    text-decoration: underline;
+    color: var(--sage-dark);
 }
 
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.2);
-    padding-top: 20px;
-    font-size: 13px;
-    color: #D5E1D2;
+.copyright {
+    font-size: 12px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    padding-top: 25px;
+    margin-top: 30px;
 }
 
+/* ==============================
+   RESPONSIVE
+============================== */
 
-/* ==================================
-   RESPONSIVE DESIGN
-================================== */
-
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
     .navbar {
         flex-direction: column;
-        padding: 25px;
-    }
-
-    .hero {
-        padding: 55px 35px;
-        gap: 35px;
-    }
-
-    .intro-section {
-        padding: 60px 35px;
-        gap: 35px;
-    }
-
-    .wellness-section {
-        padding: 60px 35px;
-    }
-
-    .wellness-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .wellness-card {
-        min-height: 260px;
-    }
-
-    .campaign-banner {
-        margin: 40px 35px;
-        flex-wrap: wrap;
-    }
-
-    .secondary-button {
-        margin-left: 0;
-    }
-
-    .strategy-container {
-        padding: 40px 35px;
-    }
-}
-
-@media (max-width: 700px) {
-
-    body {
-        padding: 8px;
-    }
-
-    .website {
-        border-radius: 15px;
+        padding: 20px 5%;
     }
 
     .navbar nav {
+        flex-wrap: wrap;
         justify-content: center;
-    }
-
-    .navbar nav a {
-        font-size: 12px;
-        padding: 9px 12px;
+        gap: 15px;
     }
 
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
-        padding: 45px 25px;
+        padding: 50px 6%;
+        gap: 40px;
+    }
+
+    .hero-image {
+        max-width: 600px;
+        margin: auto;
+        width: 100%;
+    }
+
+    .floating-card {
+        left: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .campaign-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 45px;
+    }
+
+    .strategy-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar nav {
+        gap: 10px;
+    }
+
+    .navbar nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 40px 6%;
     }
 
     .hero h1 {
         font-size: 42px;
     }
 
-    .hero-content > p {
-        font-size: 16px;
-    }
-
-    .hero-note {
-        justify-content: center;
-    }
-
-    .hero-image-placeholder {
-        min-height: 350px;
-    }
-
-    .plant-art {
-        font-size: 130px;
-    }
-
-    .image-message {
-        font-size: 23px;
+    .image-placeholder {
+        height: 330px;
     }
 
     .floating-card {
+        position: relative;
         left: 0;
-        bottom: 15px;
-        padding: 12px;
+        bottom: 0;
+        margin-top: -30px;
+        margin-left: 15px;
     }
 
-    .intro-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 50px 25px;
-    }
-
-    .section-heading h2 {
-        font-size: 33px;
-    }
-
-    .intro-text {
-        font-size: 16px;
+    .intro {
+        padding: 65px 7%;
     }
 
     .wellness-section {
-        padding: 50px 20px;
+        padding: 60px 6%;
     }
 
-    .wellness-card {
-        padding: 25px;
+    .cards {
+        grid-template-columns: 1fr;
     }
 
-    .campaign-banner {
-        margin: 25px 20px;
-        padding: 25px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .campaign-banner h2 {
-        font-size: 25px;
+    .card {
+        padding: 30px;
     }
 
     .page-hero {
-        padding: 50px 25px;
+        padding: 70px 7%;
     }
 
-    .page-hero h1,
-    .page-hero h2 {
-        font-size: 38px;
+    .page-hero h1 {
+        font-size: 42px;
     }
 
-    .strategy-container {
-        grid-template-columns: 1fr;
-        padding: 25px 20px;
-    }
-
-    .strategy-box {
-        padding: 25px;
-    }
-
-    .quote {
-        padding: 45px 25px;
-    }
-
-    .quote h2 {
-        font-size: 27px;
+    .campaign-banner {
+        margin: 40px 6%;
+        padding: 35px;
     }
 
     .message-card {
-        padding: 50px 25px;
+        padding: 35px;
     }
 
-    .message-card p {
-        font-size: 16px;
+    .message-section {
+        padding: 60px 6%;
     }
 
-    .message-card h2 {
-        font-size: 28px;
+    .ethics-section {
+        padding: 70px 7%;
     }
 
-    .footer {
-        padding: 35px 25px;
+    .final-banner {
+        padding: 70px 6%;
     }
 
     .footer-links {
-        flex-direction: column;
         gap: 15px;
     }
 }
