@@ -1,8 +1,4 @@
 
-/* ==============================
-   VARIABLES Y ESTILO GENERAL
-============================== */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
@@ -11,12 +7,10 @@
     --sage: #DCE8D8;
     --sage-dark: #8CA88C;
     --green: #355640;
-    --green-light: #66836A;
     --pink: #F4E6E2;
-    --yellow: #F4EEDC;
+    --beige: #F4EEDC;
     --text: #354638;
-    --text-light: #718071;
-    --border: #E6E9E0;
+    --light-text: #718071;
 }
 
 * {
@@ -25,14 +19,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
+    font-family: 'DM Sans', sans-serif;
     line-height: 1.7;
 }
 
@@ -46,643 +36,277 @@ a {
     color: inherit;
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
+/* NAVIGATION */
 
-/* ==============================
-   NAVBAR
-============================== */
-
-.navbar {
-    width: 100%;
-    padding: 22px 7%;
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--cream);
-    gap: 30px;
+    padding: 20px 7%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
-    font-weight: 700;
+    font-size: 23px;
     color: var(--green);
-    white-space: nowrap;
+    font-weight: 700;
 }
 
-.logo span {
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--text);
+    font-size: 13px;
+}
+
+nav a:hover {
     color: var(--sage-dark);
 }
 
-.navbar nav {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.navbar nav a {
-    font-size: 13px;
-    color: var(--text);
-    transition: 0.3s;
-}
-
-.navbar nav a:hover {
-    color: var(--green-light);
-}
-
-/* ==============================
-   BOTONES
-============================== */
-
-.btn {
-    display: inline-block;
-    padding: 14px 25px;
-    background: var(--green);
-    color: var(--white);
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 600;
-    transition: 0.3s;
-    border: none;
-}
-
-.btn:hover {
-    background: var(--green-light);
-    transform: translateY(-2px);
-}
-
-.btn-light {
-    background: var(--white);
-    color: var(--green);
-}
-
-.btn-light:hover {
-    background: var(--sage);
-}
-
-/* ==============================
-   HERO PRINCIPAL
-============================== */
+/* HERO */
 
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 70px;
+    gap: 50px;
     padding: 70px 8%;
-    min-height: 550px;
-}
-
-.hero-content {
-    max-width: 600px;
-}
-
-.tag {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--green-light);
-    margin-bottom: 20px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 5vw, 70px);
+    font-size: clamp(40px, 5vw, 65px);
     color: var(--green);
     margin-bottom: 25px;
 }
 
-.hero h1 span,
-.page-hero h1 span {
+.hero h1 span {
     color: var(--sage-dark);
 }
 
-.hero-content > p:not(.tag) {
-    font-size: 16px;
-    color: var(--text-light);
-    max-width: 500px;
-    margin-bottom: 30px;
+.hero p {
+    color: var(--light-text);
+    margin-bottom: 25px;
 }
 
-.hero-image {
-    position: relative;
-}
-
-.image-placeholder {
+.hero img {
     width: 100%;
-    height: 450px;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-.image-placeholder img {
-    width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
+    border-radius: 25px;
 }
 
-.floating-card {
-    position: absolute;
-    bottom: 25px;
-    left: -35px;
-    background: var(--white);
-    padding: 20px 25px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(53, 86, 64, 0.12);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    max-width: 250px;
+.tag {
+    color: var(--sage-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
-.floating-card span {
-    font-size: 28px;
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.floating-card p {
-    font-size: 13px;
-    font-weight: 600;
+.button:hover {
+    background: var(--sage-dark);
+    transform: translateY(-2px);
+}
+
+.light {
+    background: white;
     color: var(--green);
 }
 
-/* ==============================
-   INTRODUCCIÓN
-============================== */
+/* INTRO */
 
 .intro {
-    padding: 100px 10%;
+    max-width: 850px;
+    padding: 70px 8%;
     text-align: center;
-    max-width: 1000px;
     margin: auto;
 }
 
 .intro h2 {
-    font-size: clamp(35px, 4vw, 50px);
-    color: var(--green);
-    margin-bottom: 25px;
-}
-
-.intro > p:not(.tag) {
-    max-width: 750px;
-    margin: auto;
-    color: var(--text-light);
-    font-size: 16px;
-}
-
-/* ==============================
-   SECCIONES DE BIENESTAR
-============================== */
-
-.wellness-section {
-    padding: 80px 8%;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 50px;
-}
-
-.section-heading h2 {
-    font-size: clamp(35px, 4vw, 50px);
+    font-size: clamp(30px, 4vw, 45px);
     color: var(--green);
     margin-bottom: 20px;
 }
 
-.section-heading > p:not(.tag) {
-    color: var(--text-light);
+.intro p {
+    color: var(--light-text);
+    margin-bottom: 20px;
 }
 
-/* ==============================
-   TARJETAS
-============================== */
+/* PAGE TITLES */
+
+.page-title {
+    text-align: center;
+    padding: 75px 8%;
+    background: var(--sage);
+}
+
+.page-title h1 {
+    font-size: clamp(35px, 5vw, 55px);
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.page-title > p:not(.tag) {
+    max-width: 750px;
+    margin: auto;
+    color: var(--light-text);
+}
+
+/* CARDS */
 
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 22px;
+    padding: 60px 8%;
 }
 
 .card {
-    display: block;
-    padding: 35px;
-    border-radius: 25px;
+    padding: 30px;
+    border-radius: 22px;
     transition: 0.3s;
-    border: 1px solid transparent;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(53, 86, 64, 0.08);
+    transform: translateY(-5px);
 }
 
-.physical-card {
-    background: var(--sage);
-}
-
-.emotional-card {
-    background: var(--pink);
-}
-
-.social-card {
-    background: var(--yellow);
-}
-
-.card-icon {
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
-    font-size: 30px;
-    margin-bottom: 25px;
+.card span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 18px;
 }
 
 .card h3 {
-    font-size: 25px;
+    font-size: 23px;
     color: var(--green);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card p {
     font-size: 14px;
-    color: var(--text-light);
-    margin-bottom: 20px;
+    color: var(--light-text);
 }
 
-.card-link {
-    display: inline-block;
-    font-weight: 700;
-    color: var(--green);
-    font-size: 14px;
-}
-
-/* ==============================
-   BANNER
-============================== */
-
-.campaign-banner {
-    margin: 60px 8%;
-    padding: 60px;
-    background: var(--green);
-    border-radius: 30px;
-    color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
-
-.campaign-banner .tag {
-    color: var(--sage);
-}
-
-.campaign-banner h2 {
-    font-size: clamp(32px, 4vw, 48px);
-    margin-bottom: 20px;
-}
-
-.campaign-banner p:not(.tag) {
-    max-width: 550px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-/* ==============================
-   HERO DE PÁGINAS INTERNAS
-============================== */
-
-.page-hero {
-    padding: 100px 10%;
-    text-align: center;
+.green {
     background: var(--sage);
 }
 
-.page-hero h1 {
-    font-size: clamp(42px, 5vw, 65px);
-    color: var(--green);
-    margin-bottom: 25px;
+.pink {
+    background: var(--pink);
 }
 
-.page-hero > p:not(.tag) {
-    max-width: 700px;
-    margin: auto;
-    color: var(--text-light);
-    font-size: 16px;
+.beige {
+    background: var(--beige);
 }
 
-/* ==============================
-   ESTRATEGIAS
-============================== */
+/* BANNER */
 
-.strategy-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.strategy-box {
-    background: var(--white);
-    padding: 35px;
+.banner {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    margin: 40px 8%;
+    padding: 55px 30px;
     border-radius: 25px;
-    border: 1px solid var(--border);
-    transition: 0.3s;
 }
 
-.strategy-box:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(53, 86, 64, 0.07);
-}
-
-.strategy-icon {
-    font-size: 35px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.strategy-box h3 {
-    color: var(--green);
-    font-size: 24px;
+.banner h2 {
+    font-size: clamp(28px, 4vw, 42px);
     margin-bottom: 15px;
 }
 
-.strategy-box p {
-    color: var(--text-light);
-    font-size: 14px;
-}
-
-/* ==============================
-   QUOTES
-============================== */
-
-.quote-section {
-    padding: 80px 10%;
-    background: var(--pink);
-    text-align: center;
-}
-
-.quote-section blockquote {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(25px, 3vw, 40px);
-    color: var(--green);
-    max-width: 850px;
-    margin: auto;
-    font-style: italic;
-}
-
-/* ==============================
-   MENSAJE FINAL
-============================== */
-
-.message-section {
-    padding: 80px 8%;
-}
-
-.message-card {
-    background: var(--sage);
-    padding: 60px;
-    border-radius: 30px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.message-card h2 {
-    color: var(--green);
-    font-size: clamp(35px, 4vw, 50px);
-    margin-bottom: 30px;
-}
-
-.message-card p:not(.tag) {
-    color: var(--text);
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-/* ==============================
-   IMPACTO ÉTICO
-============================== */
-
-.ethics-section {
-    padding: 100px 10%;
-    background: var(--pink);
-}
-
-.ethics-content {
-    max-width: 900px;
-    margin: auto;
-}
-
-.ethics-content h2 {
-    font-size: clamp(35px, 4vw, 50px);
-    color: var(--green);
-    margin-bottom: 30px;
-}
-
-.ethics-content p {
-    color: var(--text);
-    margin-bottom: 20px;
-}
-
-/* ==============================
-   BANNER FINAL
-============================== */
-
-.final-banner {
-    padding: 100px 8%;
-    text-align: center;
-    background: var(--green);
-    color: var(--white);
-}
-
-.final-banner .tag {
-    color: var(--sage);
-}
-
-.final-banner h2 {
-    font-size: clamp(40px, 5vw, 65px);
+.banner p {
     margin-bottom: 25px;
+    color: rgba(255,255,255,0.85);
 }
 
-.final-banner > p:not(.tag) {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 30px;
-}
-
-/* ==============================
-   FOOTER
-============================== */
+/* FOOTER */
 
 footer {
-    background: var(--cream);
     text-align: center;
-    padding: 60px 8% 30px;
-}
-
-footer h3 {
-    color: var(--green);
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-footer > p {
-    color: var(--text-light);
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin: 30px 0;
-}
-
-.footer-links a {
+    padding: 40px 20px;
+    color: var(--light-text);
     font-size: 13px;
+}
+
+footer p:first-child {
+    font-family: 'Playfair Display', serif;
     color: var(--green);
-    transition: 0.3s;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.footer-links a:hover {
-    color: var(--sage-dark);
-}
+/* MOBILE */
 
-.copyright {
-    font-size: 12px;
-    color: var(--text-light);
-    border-top: 1px solid var(--border);
-    padding-top: 25px;
-    margin-top: 30px;
-}
+@media (max-width: 800px) {
 
-/* ==============================
-   RESPONSIVE
-============================== */
-
-@media (max-width: 900px) {
-
-    .navbar {
+    header {
         flex-direction: column;
-        padding: 20px 5%;
+        text-align: center;
     }
 
-    .navbar nav {
-        flex-wrap: wrap;
+    nav {
         justify-content: center;
-        gap: 15px;
     }
 
     .hero {
         grid-template-columns: 1fr;
         padding: 50px 6%;
-        gap: 40px;
     }
 
-    .hero-image {
-        max-width: 600px;
-        margin: auto;
-        width: 100%;
-    }
-
-    .floating-card {
-        left: 15px;
+    .hero img {
+        height: 300px;
     }
 
     .cards {
         grid-template-columns: 1fr 1fr;
-    }
-
-    .campaign-banner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 45px;
-    }
-
-    .strategy-grid {
-        grid-template-columns: 1fr;
+        padding: 40px 6%;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 550px) {
 
-    .navbar nav {
-        gap: 10px;
+    nav {
+        gap: 12px;
     }
 
-    .navbar nav a {
-        font-size: 11px;
-    }
-
-    .hero {
-        padding: 40px 6%;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .image-placeholder {
-        height: 330px;
-    }
-
-    .floating-card {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        margin-top: -30px;
-        margin-left: 15px;
-    }
-
-    .intro {
-        padding: 65px 7%;
-    }
-
-    .wellness-section {
-        padding: 60px 6%;
+    nav a {
+        font-size: 12px;
     }
 
     .cards {
         grid-template-columns: 1fr;
     }
 
-    .card {
-        padding: 30px;
+    .hero h1 {
+        font-size: 40px;
     }
 
-    .page-hero {
-        padding: 70px 7%;
+    .page-title {
+        padding: 55px 6%;
     }
 
-    .page-hero h1 {
-        font-size: 42px;
-    }
-
-    .campaign-banner {
-        margin: 40px 6%;
-        padding: 35px;
-    }
-
-    .message-card {
-        padding: 35px;
-    }
-
-    .message-section {
-        padding: 60px 6%;
-    }
-
-    .ethics-section {
-        padding: 70px 7%;
-    }
-
-    .final-banner {
-        padding: 70px 6%;
-    }
-
-    .footer-links {
-        gap: 15px;
+    .banner {
+        margin: 30px 6%;
     }
 }
