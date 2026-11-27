@@ -1,5 +1,25 @@
 
-/* GENERAL */
+/* ==================================
+   BREATH WELLNESS
+   MODERN WELLNESS DESIGN
+================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+    --cream: #F7F5EF;
+    --white: #FFFFFF;
+    --sage: #DCE8D8;
+    --sage-dark: #8CA88C;
+    --green: #355640;
+    --green-light: #66836A;
+    --pink: #F4E6E2;
+    --yellow: #F4EEDC;
+    --text: #354638;
+    --text-light: #718071;
+    --border: #E6E9E0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,373 +31,772 @@ html {
 }
 
 body {
-    background-color: #f7f1e9;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #344a37;
+    background: var(--cream);
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--text);
     padding: 20px;
 }
 
 .website {
-    max-width: 1250px;
+    max-width: 1350px;
     margin: auto;
-    background-color: #faf9f5;
-    border-radius: 25px;
+    background: var(--white);
+    border-radius: 24px;
     overflow: hidden;
 }
 
-/* NAVBAR */
+
+/* ==================================
+   NAVIGATION
+================================== */
+
 .navbar {
-    background-color: #bdd1b9;
-    padding: 30px 40px;
+    padding: 25px 55px;
+    background: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
+    border-bottom: 1px solid var(--border);
 }
 
 .logo {
-    font-size: 35px;
-    color: #648267;
-    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 30px;
+    color: var(--sage-dark);
 }
 
 .navbar nav {
     display: flex;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .navbar nav a {
     text-decoration: none;
-    color: #26382b;
-    background-color: #f4ead8;
-    padding: 12px 20px;
-    border-radius: 15px;
-    font-size: 16px;
-    transition: 0.3s;
+    color: var(--text-light);
+    font-size: 14px;
+    padding: 11px 17px;
+    border-radius: 50px;
+    transition: 0.25s ease;
 }
 
-.navbar nav a:hover {
-    background-color: #88a88a;
-    color: white;
+.navbar nav a:hover,
+.navbar nav a.active {
+    background: var(--sage);
+    color: var(--green);
 }
 
-/* HERO HOME */
+
+/* ==================================
+   HERO
+================================== */
+
 .hero {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 60px;
-    min-height: 480px;
-}
-
-.hero-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circle {
-    width: 350px;
-    height: 350px;
-    background-color: #88a88a;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 150px;
+    gap: 60px;
+    padding: 85px 75px;
+    background: var(--cream);
 }
 
 .hero-content {
-    max-width: 550px;
+    max-width: 600px;
 }
 
-.subtitle {
-    font-size: 14px;
-    letter-spacing: 3px;
-    color: #789278;
+.eyebrow {
+    color: var(--green-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    display: inline-block;
     margin-bottom: 20px;
 }
 
-.hero-content h2 {
-    font-size: 52px;
-    font-weight: normal;
-    color: #344a37;
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 5vw, 70px);
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--green);
     margin-bottom: 25px;
 }
 
-.hero-content p {
-    font-size: 19px;
-    line-height: 1.7;
-    color: #566856;
-    margin-bottom: 25px;
+.hero h1 span {
+    color: var(--sage-dark);
+    display: block;
 }
+
+.hero-content > p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
 
 /* BUTTON */
-.button {
-    display: inline-block;
-    background-color: #88a88a;
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 25px;
+    background: var(--green);
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 15px;
-    font-size: 18px;
+    border-radius: 50px;
+    font-size: 15px;
     transition: 0.3s;
 }
 
-.button:hover {
-    background-color: #66876a;
+.primary-button:hover {
+    background: var(--green-light);
     transform: translateY(-3px);
 }
 
-/* CARDS */
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 20px 50px 50px;
+.primary-button span {
+    font-size: 20px;
 }
 
-.card {
-    flex: 1;
-    background-color: #f3ead9;
-    border-radius: 30px;
-    padding: 35px 25px;
+
+/* HERO NOTE */
+
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.hero-note span {
+    font-size: 25px;
+}
+
+.hero-note p {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image-card {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+}
+
+.hero-image-placeholder {
+    min-height: 480px;
+    background: var(--sage);
+    border-radius: 240px 240px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.plant-art {
+    font-size: 180px;
+    opacity: 0.9;
+}
+
+.image-message {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--green);
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+
+/* FLOATING CARD */
+
+.floating-card {
+    position: absolute;
+    bottom: 25px;
+    left: -30px;
+    background: white;
+    padding: 18px 22px;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(53, 86, 64, 0.10);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.floating-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #B87F7F;
+}
+
+.floating-card strong {
+    display: block;
+    font-size: 14px;
+    color: var(--green);
+}
+
+.floating-card small {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+
+/* ==================================
+   INTRO SECTION
+================================== */
+
+.intro-section {
+    padding: 85px 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: var(--green);
+}
+
+.intro-text {
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text-light);
+}
+
+
+/* ==================================
+   WELLNESS SECTION
+================================== */
+
+.wellness-section {
+    padding: 80px 75px;
+    background: #FAFBF8;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: auto;
+}
+
+
+/* CARDS GRID */
+
+.wellness-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.wellness-card {
     text-decoration: none;
     color: inherit;
+    border-radius: 25px;
+    padding: 30px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: translateY(-7px);
+.wellness-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(53, 86, 64, 0.08);
 }
 
-.icon {
-    font-size: 65px;
-    margin-bottom: 20px;
+.card-green {
+    background: #E7EFE3;
 }
 
-.card h3 {
-    font-size: 25px;
-    font-weight: normal;
+.card-pink {
+    background: #F5E8E4;
+}
+
+.card-yellow {
+    background: #F4EEDC;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.card-number {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.card-emoji {
+    font-size: 40px;
+}
+
+.wellness-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--green);
     margin-bottom: 15px;
-    color: #547457;
 }
 
-.card p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-bottom: 15px;
-}
-
-.card-link {
-    color: #648267;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* PAGE HERO */
-.page-hero {
-    text-align: center;
-    padding: 70px 60px;
-    background-color: #e9efe5;
-}
-
-.page-hero h2 {
-    font-size: 48px;
-    font-weight: normal;
-    color: #547457;
+.wellness-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-light);
     margin-bottom: 25px;
 }
 
-.page-hero p:not(.subtitle) {
-    font-size: 20px;
-    line-height: 1.8;
-    max-width: 850px;
-    margin: auto;
-    color: #566856;
+.card-arrow {
+    margin-top: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green);
 }
 
-/* STRATEGY BOXES */
-.strategy-container {
+
+/* ==================================
+   CAMPAIGN BANNER
+================================== */
+
+.campaign-banner {
+    margin: 60px 75px;
+    padding: 40px;
+    background: var(--sage);
+    border-radius: 25px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 25px;
-    padding: 50px 60px;
+}
+
+.banner-icon {
+    font-size: 55px;
+}
+
+.campaign-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1.4;
+    max-width: 650px;
+}
+
+.secondary-button {
+    text-decoration: none;
+    background: white;
+    color: var(--green);
+    padding: 15px 22px;
+    border-radius: 50px;
+    white-space: nowrap;
+    margin-left: auto;
+    transition: 0.3s;
+}
+
+.secondary-button:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* ==================================
+   PAGE HERO
+================================== */
+
+.page-hero {
+    background: var(--cream);
+    padding: 85px 75px;
+    text-align: center;
+}
+
+.page-hero h1,
+.page-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 55px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 25px;
+}
+
+.page-hero p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+
+/* ==================================
+   CONTENT BOXES
+================================== */
+
+.strategy-container {
+    padding: 60px 75px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .strategy-box {
-    background-color: #f3ead9;
+    padding: 35px;
+    background: #E7EFE3;
     border-radius: 25px;
-    padding: 30px 40px;
-    border-left: 8px solid #88a88a;
+    border: 1px solid var(--border);
 }
 
 .strategy-box h3 {
+    font-family: 'Playfair Display', serif;
     font-size: 27px;
-    font-weight: normal;
-    color: #547457;
-    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--green);
+    margin-bottom: 20px;
 }
 
 .strategy-box p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
-    color: #536453;
+    color: var(--text-light);
+}
+
+.strategy-box ul {
+    padding-left: 20px;
+}
+
+.strategy-box li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-light);
 }
 
 .emotional-box {
-    border-left-color: #d7a6a6;
-    background-color: #f3e5df;
+    background: #F5E8E4;
 }
 
 .social-box {
-    border-left-color: #88a88a;
-    background-color: #e4e9e3;
+    background: #F4EEDC;
 }
 
-/* QUOTE */
+
+/* ==================================
+   QUOTE
+================================== */
+
 .quote {
-    background-color: #bdd1b9;
-    padding: 55px 40px;
+    background: var(--green);
+    padding: 65px 50px;
     text-align: center;
 }
 
 .quote h2 {
-    font-size: 35px;
-    font-weight: normal;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: white;
+    max-width: 850px;
+    margin: auto;
     line-height: 1.5;
-    color: #4e6d51;
 }
 
-/* MESSAGE PAGE */
+
+/* ==================================
+   MESSAGE
+================================== */
+
 .message-card {
-    padding: 60px 80px;
+    padding: 80px 100px;
     text-align: center;
+    background: var(--cream);
 }
 
 .message-icon {
-    font-size: 80px;
+    font-size: 70px;
     margin-bottom: 30px;
 }
 
 .message-card p {
-    max-width: 900px;
-    margin: 20px auto;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.9;
-    color: #566856;
+    color: var(--text-light);
+    max-width: 850px;
+    margin: 20px auto;
 }
 
 .message-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--green);
     max-width: 850px;
     margin: 40px auto 0;
-    font-size: 35px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #547457;
 }
 
-/* FOOTER */
+
+/* ==================================
+   FOOTER
+================================== */
+
 .footer {
-    background-color: #88a88a;
+    background: var(--green);
+    color: white;
+    padding: 45px 60px 25px;
+}
+
+.footer-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.footer-brand p {
+    margin-top: 10px;
+    color: #D5E1D2;
+    font-size: 14px;
+}
+
+.footer-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px;
-    flex-wrap: wrap;
     gap: 20px;
+    flex-wrap: wrap;
+    margin: 35px 0;
 }
 
-.footer h2 {
-    color: #f5f1e8;
-    font-size: 30px;
-    font-weight: normal;
+.footer-links a {
+    text-decoration: none;
+    color: #E5ECE2;
+    font-size: 14px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
 
-    body {
-        padding: 10px;
-    }
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    font-size: 13px;
+    color: #D5E1D2;
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 1000px) {
 
     .navbar {
         flex-direction: column;
-        text-align: center;
         padding: 25px;
     }
 
-    .logo {
-        font-size: 30px;
+    .hero {
+        padding: 55px 35px;
+        gap: 35px;
+    }
+
+    .intro-section {
+        padding: 60px 35px;
+        gap: 35px;
+    }
+
+    .wellness-section {
+        padding: 60px 35px;
+    }
+
+    .wellness-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wellness-card {
+        min-height: 260px;
+    }
+
+    .campaign-banner {
+        margin: 40px 35px;
+        flex-wrap: wrap;
+    }
+
+    .secondary-button {
+        margin-left: 0;
+    }
+
+    .strategy-container {
+        padding: 40px 35px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .website {
+        border-radius: 15px;
     }
 
     .navbar nav {
         justify-content: center;
     }
 
+    .navbar nav a {
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+
     .hero {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
-        padding: 40px 25px;
-    }
-
-    .circle {
-        width: 250px;
-        height: 250px;
-        font-size: 110px;
-    }
-
-    .hero-content h2 {
-        font-size: 38px;
-    }
-
-    .cards {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .page-hero {
         padding: 45px 25px;
     }
 
-    .page-hero h2 {
-        font-size: 35px;
+    .hero h1 {
+        font-size: 42px;
     }
 
-    .page-hero p:not(.subtitle) {
-        font-size: 17px;
+    .hero-content > p {
+        font-size: 16px;
+    }
+
+    .hero-note {
+        justify-content: center;
+    }
+
+    .hero-image-placeholder {
+        min-height: 350px;
+    }
+
+    .plant-art {
+        font-size: 130px;
+    }
+
+    .image-message {
+        font-size: 23px;
+    }
+
+    .floating-card {
+        left: 0;
+        bottom: 15px;
+        padding: 12px;
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 25px;
+    }
+
+    .section-heading h2 {
+        font-size: 33px;
+    }
+
+    .intro-text {
+        font-size: 16px;
+    }
+
+    .wellness-section {
+        padding: 50px 20px;
+    }
+
+    .wellness-card {
+        padding: 25px;
+    }
+
+    .campaign-banner {
+        margin: 25px 20px;
+        padding: 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .campaign-banner h2 {
+        font-size: 25px;
+    }
+
+    .page-hero {
+        padding: 50px 25px;
+    }
+
+    .page-hero h1,
+    .page-hero h2 {
+        font-size: 38px;
     }
 
     .strategy-container {
-        padding: 25px;
+        grid-template-columns: 1fr;
+        padding: 25px 20px;
     }
 
     .strategy-box {
         padding: 25px;
     }
 
-    .strategy-box h3 {
-        font-size: 23px;
-    }
-
-    .strategy-box p {
-        font-size: 17px;
+    .quote {
+        padding: 45px 25px;
     }
 
     .quote h2 {
-        font-size: 28px;
+        font-size: 27px;
     }
 
     .message-card {
-        padding: 40px 25px;
+        padding: 50px 25px;
     }
 
     .message-card p {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .message-card h2 {
@@ -385,12 +804,11 @@ body {
     }
 
     .footer {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px 25px;
+        padding: 35px 25px;
     }
 
-    .footer h2 {
-        font-size: 25px;
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
     }
 }
